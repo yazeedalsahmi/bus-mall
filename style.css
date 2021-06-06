@@ -1,0 +1,38 @@
+  
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    color: chocolate;
+}
+body{
+    background-color: lavenderblush;
+}
+
+
+#one{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}   
+#two{
+    
+    width: 50%;
+}
+img{
+    display: inline-block;
+    width: 30%;
+    height: 300px;
+}
+ul{
+    width: 80%;
+    background-color: cornsilk;
+}
+
+li{
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+    color: brown;
