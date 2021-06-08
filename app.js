@@ -20,11 +20,10 @@ let arrOfmiddle=[];
 function ProductImage(name,path){
   this.name = name;
   this.path = path;
-  this.votes = 0;
-  this.shown = 0;
+  this.votes = 0 ;
+  this.shown = 0 ;
   ProductImage.allproduct.push(this);
-  arrOfNames.push(this.name);
-
+  arrOfNames.push(this.name)
 }
 ProductImage.allproduct = [];
 
@@ -86,6 +85,7 @@ function displayThreeImages(){
     ProductImage.allproduct[leftIndex].shown++;
     ProductImage.allproduct[rightIndex].shown++;
     ProductImage.allproduct[middleIndex].shown++;
+    saveData();
 
 
   }
@@ -118,25 +118,44 @@ function displayThreeImages(){
               ProductImage.allproduct[middleIndex].votes++;
 
           }
-          console.log(ProductImage.allproduct[1].votes);
-
           displayThreeImages();
           
       }else{
-        
-      
+
+
       leftImageElement.removeEventListener('click',handleClicking);
       rightImageElement.removeEventListener('click',handleClicking);
       middleImageElement.removeEventListener('click',handleClicking);
+    
+
       }
+      
+
+
   
     }
-  
-  
-  
-  
+    function saveData(){
+      let preData = JSON.stringify(ProductImage.allproduct);
+       
+      localStorage.setItem('TotaResult',preData);
+      console.log(localStorage.setItem('TotaResult',preData));
+
+    }
+    function gettingPreData(){
+      let data = localStorage.getItem('TotalResult');
+      console.log(data);
+      let parsedTotal = JSON.parse(data);
+      console.log(parsedTotal);
+      if (parsedTotal !== null) {
+      ProductImage.allproduct = parsedTotal;
+      }
+    }    
+    gettingPreData();
+
+
   function List(){
     let ul = document.getElementById('List');
+    ul.textContent = '';
     for(let i = 0 ; i <ProductImage.allproduct.length; i++ ){
       arrOfVotes.push(ProductImage.allproduct[i].votes);
     arrOfSeen.push(ProductImage.allproduct[i].shown);
@@ -147,14 +166,8 @@ function displayThreeImages(){
   
   
   }
-  function preimg(){
-
-  }
-
-
+  
   function gitChart(){
-
-
     let ctx = document.getElementById('myChart')
     let myChart = new Chart(ctx, {
         type: 'bar',
