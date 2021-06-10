@@ -4,11 +4,18 @@
 }
 
 h1{
+    margin-top: 200px;
     text-align: center;
-    color: chocolate;
+    color: rgb(24, 161, 12);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-right: 50px;
+
 }
 body{
-    background-color: lavenderblush;
+    background-image: url(img/pexels-skitterphoto-630754.jpg);
+    background-size: 100% 100%;
 }
 
 
@@ -22,17 +29,22 @@ body{
     width: 50%;
 }
 img{
+    margin-top: 50px;
     display: inline-block;
     width: 30%;
     height: 300px;
 }
 ul{
     width: 80%;
-    background-color: cornsilk;
+    background-color: rgba(56, 206, 19, 0.61);
+    margin-left: 400px;
+   
 }
 
 li{
     font-size: 20px;
     font-weight: bold;
     list-style: none;
-    color: brown;
+    color: rgb(173, 13, 13);
+    text-align: center;
+    font-family: monospace;}
