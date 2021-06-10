@@ -84,10 +84,7 @@ function displayThreeImages(){
     rightImageElement.setAttribute('src',ProductImage.allproduct[rightIndex].path);
     ProductImage.allproduct[leftIndex].shown++;
     ProductImage.allproduct[rightIndex].shown++;
-    ProductImage.allproduct[middleIndex].shown++;
-    saveData();
-
-
+    ProductImage.allproduct[middleIndex].shown++;   
   }
   displayThreeImages();
   
@@ -126,7 +123,7 @@ function displayThreeImages(){
       leftImageElement.removeEventListener('click',handleClicking);
       rightImageElement.removeEventListener('click',handleClicking);
       middleImageElement.removeEventListener('click',handleClicking);
-    
+      saveData();
 
       }
       
@@ -177,7 +174,7 @@ function displayThreeImages(){
                 label: '# of Votes',
                 data: arrOfVotes,
                 backgroundColor: [
-                    'rgba(194, 180, 178)',
+                    'rgba(56, 206, 19, 0.61)',
                 ],
                 borderWidth: 1
             },{
