@@ -26,7 +26,7 @@ function ProductImage(name,path){
   arrOfNames.push(this.name)
 }
 ProductImage.allproduct = [];
-
+//add object
 new ProductImage('bag','img/bag.jpg');
 new ProductImage('banana','img/banana.jpg');
 new ProductImage('bathroom','img/boots.jpg');
@@ -45,7 +45,7 @@ new ProductImage('unicorn','img/unicorn.jpg');
 new ProductImage('usb','img/usb.gif');
 new ProductImage('water-can','img/water-can.jpg');
 new ProductImage('wine-glass','img/wine-glass.jpg');
-
+//generate and display images
 function displayThreeImages(){
     leftIndex = generateRandomIndex();
     middleIndex=generateRandomIndex(); 
@@ -87,7 +87,7 @@ function displayThreeImages(){
     ProductImage.allproduct[middleIndex].shown++;   
   }
   displayThreeImages();
-  
+  //generate random index
   function generateRandomIndex(){
     let randomIndex = Math.floor(Math.random() * ProductImage.allproduct.length);
     return randomIndex;              
@@ -98,7 +98,7 @@ function displayThreeImages(){
   leftImageElement.addEventListener('click',handleClicking);
   middleImageElement.addEventListener('click',handleClicking);
   rightImageElement.addEventListener('click',handleClicking);
-  
+  // round user
   function handleClicking(event){
       countsClick++;
       
@@ -116,7 +116,7 @@ function displayThreeImages(){
 
           }
           displayThreeImages();
-          
+
       }else{
 
 
@@ -125,19 +125,22 @@ function displayThreeImages(){
       middleImageElement.removeEventListener('click',handleClicking);
       saveData();
 
+
       }
       
 
 
   
     }
+    //save data
     function saveData(){
       let preData = JSON.stringify(ProductImage.allproduct);
        
-      localStorage.setItem('TotaResult',preData);
-      console.log(localStorage.setItem('TotaResult',preData));
+      localStorage.setItem('TotalResult',preData);
+      console.log(localStorage.setItem('TotalResult',preData));
 
     }
+    //gitting data
     function gettingPreData(){
       let data = localStorage.getItem('TotalResult');
       console.log(data);
@@ -149,7 +152,7 @@ function displayThreeImages(){
     }    
     gettingPreData();
 
-
+//print result
   function List(){
     let ul = document.getElementById('List');
     ul.textContent = '';
@@ -163,7 +166,7 @@ function displayThreeImages(){
   
   
   }
-  
+  //display result on chart
   function gitChart(){
     let ctx = document.getElementById('myChart')
     let myChart = new Chart(ctx, {
